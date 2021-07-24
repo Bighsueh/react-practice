@@ -50,7 +50,7 @@ export default function App() {
 
                 {/*TouchableOpacity*/}
                 <TouchableOpacity onPress={handleImgPress}>
-                    <Image source={require("./assets/Taiwan.jpg")} style={styles.img}/>
+                    <Image source={require("./app/assets/Taiwan.jpg")} style={styles.img}/>
                 </TouchableOpacity>
 
                 <Button color="orange" title="click me"
