@@ -25,7 +25,8 @@
     "react-screen": "^0.1.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0"
+    "@babel/core": "^7.9.0",
+    "@react-native-community/hooks": "^2.6.0"
   },
   "private": true
 }

@@ -1,15 +1,39 @@
-import {StatusBar} from 'expo-status-bar';
 import React from 'react';
-import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Alert} from 'react-native';
+import {
+    Dimensions,
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    SafeAreaView,
+    TouchableOpacity,
+    Button,
+    Alert,
+    Platform,
+    StatusBar,
+} from 'react-native';
 import {ProgressBar} from "react-native-paper";
+import {
+    useDimensions, useDeviceOrientation
+} from '@react-native-community/hooks';
 
 export default function App() {
     console.log("storing change...");
+    // console.log(Dimensions.get("screen"));
+    // console.log(useDimensions());
     const handlePress = () => console.log("text pressed");
     const handleImgPress = () => console.log('img pressed')
     return (
-        <SafeAreaView style={[styles.container, containerStyle]}>
-            <StatusBar style="auto"/>
+        <SafeAreaView style={styles.container}>
+            <View
+                style={{
+                    backgroundColor: "orange",
+                    width: "100%",
+                    height: 70,
+                }
+                }>
+
+            </View>
             {/*ProgressBar*/}
             <Text>ProgressBar</Text>
             <ProgressBar progress={0.3} style={styles.probarStyle} color={'#febc5f'}/>
@@ -27,9 +51,9 @@ export default function App() {
 
             <Button color="orange" title="click me"
                     onPress={() =>
-                        Alert.alert("title", "button press",[
-                            {text:"yes",onPress: () => console.log("button_press_yes")},
-                            {text:"no",onPress: () => console.log("button_press_no")},
+                        Alert.alert("title", "button press", [
+                            {text: "yes", onPress: () => console.log("button_press_yes")},
+                            {text: "no", onPress: () => console.log("button_press_no")},
                         ])}/>
         </SafeAreaView>
     );
@@ -37,14 +61,13 @@ export default function App() {
 
 
 // 樣式
-const containerStyle = {backgroundColor : "cornsilk"};
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     },
     probarStyle: {
         width: 162,
