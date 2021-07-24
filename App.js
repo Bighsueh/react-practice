@@ -26,34 +26,18 @@ export default function App() {
     const handleImgPress = () => console.log('img pressed')
     return (
         <SafeAreaView style={styles.container}>
-            {/*<View*/}
-            {/*    style={{*/}
-            {/*        backgroundColor: "orange",*/}
-            {/*        width: "100%",*/}
-            {/*        height: 70,*/}
-            {/*    }*/}
-            {/*    }>*/}
-            {/*</View>*/}
-            <View style={{
-                backgroundColor: "tomato",
-                width: "100%",
-                flex: 1,
-            }}/>
-            <View style={{
-                backgroundColor: "gold",
-                width: "100%",
-                flex: 1,
-            }}/>
-            <View style={{
-                backgroundColor: "dodgerblue",
-                width: "100%",
-                flex: 1,
-            }}/>
-            <View style={{
-                flex : 6,
-            }}>
-
-
+            <View
+                style={{
+                    backgroundColor: "orange",
+                    width: "100%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: 70,
+                }
+                }>
+                <Text style={{color: "white"}}>標題</Text>
+            </View>
+            <View>
                 {/*ProgressBar*/}
                 <Text>ProgressBar</Text>
                 <ProgressBar progress={0.3} style={styles.probarStyle} color={'#febc5f'}/>
