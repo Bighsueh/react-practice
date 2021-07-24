@@ -1,6 +1,6 @@
 import {StatusBar} from 'expo-status-bar';
 import React from 'react';
-import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, } from 'react-native';
+import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, Alert} from 'react-native';
 import {ProgressBar} from "react-native-paper";
 
 export default function App() {
@@ -25,8 +25,12 @@ export default function App() {
                 <Image source={require("./assets/Taiwan.jpg")} style={styles.img}/>
             </TouchableOpacity>
 
-            <Button color="orange"
-                    title="click me" onPress={() => console.log("button press")}/>
+            <Button color="orange" title="click me"
+                    onPress={() =>
+                        Alert.alert("title", "button press",[
+                            {text:"yes",onPress: () => console.log("button_press_yes")},
+                            {text:"no",onPress: () => console.log("button_press_no")},
+                        ])}/>
         </SafeAreaView>
     );
 }
