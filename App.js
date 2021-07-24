@@ -1,12 +1,12 @@
 import {StatusBar} from 'expo-status-bar';
 import React from 'react';
-import {StyleSheet, Text, View, Image, SafeAreaView,TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, } from 'react-native';
 import {ProgressBar} from "react-native-paper";
 
 export default function App() {
     console.log("storing change...");
     const handlePress = () => console.log("text pressed");
-    const handleImgPress = ()=> console.log('img pressed')
+    const handleImgPress = () => console.log('img pressed')
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar style="auto"/>
@@ -19,10 +19,14 @@ export default function App() {
                 創業維艱，緬懷諸先烈，守成不易，莫徒務近功。
                 同心同德，貫徹始終，青天白日滿地紅。
             </Text>
+
+            {/*TouchableOpacity*/}
             <TouchableOpacity onPress={handleImgPress}>
                 <Image source={require("./assets/Taiwan.jpg")} style={styles.img}/>
             </TouchableOpacity>
 
+            <Button color="orange"
+                    title="click me" onPress={() => console.log("button press")}/>
         </SafeAreaView>
     );
 }
