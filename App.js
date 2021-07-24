@@ -8,7 +8,7 @@ export default function App() {
     const handlePress = () => console.log("text pressed");
     const handleImgPress = () => console.log('img pressed')
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={[styles.container, containerStyle]}>
             <StatusBar style="auto"/>
             {/*ProgressBar*/}
             <Text>ProgressBar</Text>
@@ -37,6 +37,8 @@ export default function App() {
 
 
 // 樣式
+const containerStyle = {backgroundColor : "cornsilk"};
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
